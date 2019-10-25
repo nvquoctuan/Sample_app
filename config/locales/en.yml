@@ -31,10 +31,20 @@
 
 en:
   layouts:
-    application:
+    rails_default:
       title: "Ruby on Rails Tutorial Sample App"
+    header:
       lang_vi: "Vietnamese"
       lang_en: "English"
+      home: "Home"
+      help: "Help"
+      login: "Log in"
+    footer:
+      content1_html: "The <a href='https://www.railstutorial.org/'> Ruby on Rails Tutorial </a>"
+      content2_html: "by <a href='http://www.michaelhartl.com/'> Michael Hartl </a>"
+      news: "News"
+      about: "About"
+      contact: "Contact"
   static_pages:
     home:
       title: "Home"
@@ -59,3 +69,8 @@ en:
     contact:
       title: "Contact"
       content_html: 'Contact the Ruby on Rails Tutorial about the sample app at the <a href="https://www.railstutorial.org/contact">contact page</a>.'
+  users:
+    new:
+      signup: "Sign up"
+      content: "This will be a signup page for new users."
+      signup2: "Sign up now!"
