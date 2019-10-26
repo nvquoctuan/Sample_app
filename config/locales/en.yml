@@ -74,3 +74,16 @@ en:
       signup: "Sign up"
       content: "This will be a signup page for new users."
       signup2: "Sign up now!"
+      name: "Name"
+      pass: "Password"
+      confirm: "Confirmation"
+      btn: "Create my account"
+    create:
+      welcome: "Welcome to the Sample App!"
+    show:
+      danger: "User not exists!"
+  shared:
+    error_messages:
+      count:
+        one: "The form contain %{count} error"
+        other: "The form contain %{count} errors"

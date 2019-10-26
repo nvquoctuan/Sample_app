@@ -1,6 +1,6 @@
 vi:
   layouts:
-    application:
+    rails_default:
       title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
     header:
       lang_vi: "Vietnamese"
@@ -33,3 +33,16 @@ vi:
       signup: "Đăng ký"
       content: "Đây sẽ là một trang đăng ký cho người dùng mới."
       signup2: "Đăng ký ngay!"
+      name: "Tên người dùng"
+      pass: "Mật khẩu"
+      confirm: "Xác nhận mật khẩu"
+      btn: "Tạo tài khoản"
+    create:
+      welcome: "Chào mừng bạn đến ứng dụng mẫu!"
+    show:
+      danger: "Tài khoản không tồn tại!"
+  shared:
+    error_messages:
+      count:
+        one: "Form chứa %{count} lỗi"
+        other: "Form chứa %{count} lỗi"
