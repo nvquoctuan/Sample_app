@@ -2,8 +2,18 @@ vi:
   layouts:
     application:
       title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
+    header:
       lang_vi: "Vietnamese"
       lang_en: "English"
+      home: "Trang chủ"
+      help: "Giúp đỡ"
+      login: "Đăng nhập"
+    footer:
+      content1_html: "<a href='%{link}'> Hướng dẫn Ruby on Rails </a>"
+      content2_html: "bởi <a href='%{link}'> Michael Hartl </a>"
+      news: "Tin tức"
+      about: "Giới thiệu"
+      contact: "Liên hệ"
   static_pages:
     home:
       title: "Trang chủ"
@@ -11,10 +21,15 @@ vi:
       content_html: 'Đây là trang chủ cho ứng dụng mẫu <a href="https://www.railstutorial.org/">hướng dẫn Ruby on Rails</a>.'
     about:
       title: "Giới thiệu"
-      content_html: '<a href="https://www.railstutorial.org/"><em>Hướng dẫn Ruby on Rails</em></a> là một <a href="https://www.railstutorial.org/book">quyển sách</a> và <a href="http://screencasts.railstutorial.org/">loạt các hình ảnh</a> dạy về phát triển web với to teach web development with <a href="http://rubyonrails.org/"> Ruby on Rails</a>. Đây là ứng dụng mẫu cho hướng hướng dẫn.'
+      content_html: '<a href="https://www.railstutorial.org/"><em>Hướng dẫn Ruby on Rails</em></a> là một <a href="https://www.railstutorial.org/book">quyển sách</a> và <a href="http://screencasts.railstutorial.org/">loạt các hình ảnh</a> dạy về phát triển web với <a href="http://rubyonrails.org/"> Ruby on Rails</a>. Đây là ứng dụng mẫu cho hướng hướng dẫn.'
     help:
       title: "Giúp đỡ"
       content_html: 'Nhận sự giúp đỡ trên hướng dẫn Ruby on Rails tại <a href="https://www.railstutorial.org/help"> trang giúp đỡ hướng dẫn Rails</a>. Để nhậ được sự giúp đỡ trên ứng dụng mẫu này, xem <a href="https://www.railstutorial.org/book">sách <em>hướng dẫn Ruby on Rails</em></a>.'
     contact:
       title: "Liên hệ"
       content_html: 'Liên hệ hướng dẫn Ruby on Rails về ứng dụng mẫu tại <a href="https://www.railstutorial.org/contact">trang liên hệ</a>.'
+  users:
+    new:
+      signup: "Đăng ký"
+      content: "Đây sẽ là một trang đăng ký cho người dùng mới."
+      signup2: "Đăng ký ngay!"

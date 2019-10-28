@@ -1,0 +1,22 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class = "container">
+    <%= link_to "sample app", root_path, id: "logo", class: "navbar-brand" %>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class = "nav-item"><%= link_to (t ".home"), root_path, class: "nav-link" %></li>
+          <li class = "nav-item"><%= link_to (t ".help"), help_path, class: "nav-link" %></li>
+          <li class = "nav-item"><%= link_to (t ".login"), "#", class: "nav-link" %></li>
+          <li class = "nav-item">
+            <form method = "get">
+              <select class="selectpicker countrypicker" data-flag="true" name = "locale" onchange = "this.form.submit()">
+                <option value = "vi" <%= %Q[selected = selected] if :vi == locale %>><span class="filter-option pull-left flag vn"><%= t ".lang_vi" %></span></option>
+                <option value = "en" <%= %Q[selected = selected] if :en == locale  %>><span class = "filter-option pull-left flag en"><%= t ".lang_en" %></span></option>
+              </select>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
