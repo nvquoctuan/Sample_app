@@ -1,4 +1,15 @@
 vi:
+  helpers:
+    label:
+      user:
+        name: "Tên người dùng"
+        password: "Mật khẩu"
+        password_confirmation: "Xác thật mật khẩu"
+      session:
+        password: "Mật khẩu"
+    submit:
+      user:
+        create: "Tạo tài khoản"
   layouts:
     rails_default:
       title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
@@ -8,9 +19,14 @@ vi:
       home: "Trang chủ"
       help: "Giúp đỡ"
       login: "Đăng nhập"
+      link_dropdown_html: "Tài khoản <b class='caret'></b>"
+      user: "Người dùng"
+      profile: "Thông tin"
+      setting: "Thiết lập"
+      logout: "Đăng xuất"
     footer:
-      content1_html: "<a href='%{link}'> Hướng dẫn Ruby on Rails </a>"
-      content2_html: "bởi <a href='%{link}'> Michael Hartl </a>"
+      content1_html: "The <a href='https://www.railstutorial.org/'> Hướng dẫn Ruby on Rails </a>"
+      content2_html: "bởi <a href='http://www.michaelhartl.com/'> Michael Hartl </a>"
       news: "Tin tức"
       about: "Giới thiệu"
       contact: "Liên hệ"
@@ -36,7 +52,7 @@ vi:
       name: "Tên người dùng"
       pass: "Mật khẩu"
       confirm: "Xác nhận mật khẩu"
-      btn: "Tạo tài khoản"
+      btn: ""
     create:
       welcome: "Chào mừng bạn đến ứng dụng mẫu!"
     show:
@@ -46,3 +62,10 @@ vi:
       count:
         one: "Form chứa %{count} lỗi"
         other: "Form chứa %{count} lỗi"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      new1: "Người dùng mới?"
+      signup: "Đăng ký ngay!"
+    create:
+      danger: "Tài khoản mật khẩu không hợp lệ."
