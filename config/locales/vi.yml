@@ -45,6 +45,9 @@ vi:
       title: "Liên hệ"
       content_html: 'Liên hệ hướng dẫn Ruby on Rails về ứng dụng mẫu tại <a href="https://www.railstutorial.org/contact">trang liên hệ</a>.'
   users:
+    danger_permission: "Người dùng không có quyền!"
+    danger_login: "Hãy đăng nhập."
+    danger_user: "Tài khoản không tồn tại!"
     new:
       signup: "Đăng ký"
       content: "Đây sẽ là một trang đăng ký cho người dùng mới."
@@ -52,11 +55,24 @@ vi:
       name: "Tên người dùng"
       pass: "Mật khẩu"
       confirm: "Xác nhận mật khẩu"
-      btn: ""
     create:
       welcome: "Chào mừng bạn đến ứng dụng mẫu!"
     show:
       danger: "Tài khoản không tồn tại!"
+    edit:
+      title: "Đăng ký người dùng."
+      title2: "Cập nhật thông tin của bạn"
+      btn: "Lưu thay đổi"
+      change: "Thay đổi"
+    update:
+      success: "Cập nhật thành công!"
+    index:
+      title: "Tất cả người dùng"
+    destroy:
+      success: "Xóa người dùng thành công!"
+    user:
+      delete: "Xóa người dùng"
+      confirm: "Bạn chắc chứ?"
   shared:
     error_messages:
       count:
@@ -67,6 +83,6 @@ vi:
       title: "Đăng nhập"
       new1: "Người dùng mới?"
       signup: "Đăng ký ngay!"
+      remember: "Ghi nhớ tài khoản."
     create:
       danger: "Tài khoản mật khẩu không hợp lệ."
-      remember: "Ghi nhớ tài khoản."

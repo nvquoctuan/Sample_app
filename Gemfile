@@ -5,10 +5,14 @@ ruby "2.6.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "bcrypt", "~> 3.1.12"
+gem "bootstrap-will_paginate", "~> 1.0.0"
 gem "coffee-rails", "4.2.2"
 gem "config"
+# Create fake data
+gem "faker", "~> 1.7.3"
 gem "figaro"
 gem "rails", "~> 6.0.0"
+gem "will_paginate", "~> 3.1.6"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails", "4.3.1"
