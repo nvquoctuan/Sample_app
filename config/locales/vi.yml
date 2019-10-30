@@ -6,14 +6,14 @@ vi:
           attributes:
             name:
               blank: "Tên không được để trống"
-              to_long: "Tên không được vượt quá 50 kí tự"
+              too_long: "Tên không được vượt quá 50 kí tự"
             email:
               blank: "Email không được trống"
-              to_long: "Email không được quá dài"
+              too_long: "Email không được quá dài"
               invalid: "Email không hợp lệ"
             password:
               blank: "Mật khẩu không được để trống"
-              to_short: "Mật khẩu quá ngắn"
+              too_short: "Mật khẩu quá ngắn"
       messages:
         bad_name: "Tên không hợp lệ"
         bad_email: "Email không hợp lệ"
@@ -101,6 +101,7 @@ vi:
       new1: "Người dùng mới?"
       signup: "Đăng ký ngay!"
       remember: "Ghi nhớ tài khoản."
+      forgot: "Quên mật khẩu"
     create:
       danger: "Tài khoản mật khẩu không hợp lệ."
   user_mailer:
@@ -111,10 +112,35 @@ vi:
       tài khoản của bạn:"
       active: "Kích hoạt"
       hello: "Chào %{name}"
+    password_reset:
+      title: "Thiết lập lại mật khẩu"
+      info: "Để thiết lập lại mật khẩu click đường dẫn bên dưới"
+      content_html: "<p>Đường dẫn này tồn tại 2 giờ.</p>
+                    <p>Nếu bạn không yêu thiết lập lại mật khẩu của bạn,
+      xin vui lòng bỏ qua email này và mật khẩu của bạn sẽ ở lại là nó. </p>"
+      content:  "Đường dẫn này tồn tại 2 giờ.
+                  Nếu bạn không yêu thiết lập lại mật khẩu của bạn,
+      xin vui lòng bỏ qua email này và mật khẩu của bạn sẽ ở lại là nó."
   account_activations:
     edit:
       success: "Kích hoạt thành công!"
       danger: "Link kích hoạt không hợp lệ!"
+      warning: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn có đường dẫn để kích hoạt."
   will_paginate:
     previous_label: "Trang trước"
     next_label: "Trang sau"
+  password_resets:
+    danger_email: "Email không tồn tại."
+    danger_expired: "Thiết lập lại password đã hết hạn."
+    edit:
+      title: "Thiết lập lại mật khẩu"
+      btn: "Cập nhật mật khẩu"
+    new:
+      title: "Quên mật khẩu"
+      btn: "Gửi"
+    create:
+      info: "Đã gửi đến email hướng dẫn đặt lại mật khẩu."
+      danger: "Địa chỉ email không tìm thấy."
+    update:
+      empty: "Không thể rỗng"
+      success: "Mật khẩu thiết lập lại thành công!"

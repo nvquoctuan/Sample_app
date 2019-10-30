@@ -67,16 +67,16 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    unless current_user? @user
-      redirect_to @user
-      flash[:danger] = t "users.danger_permission"
-    end
+    return if current_user? @user
+
+    redirect_to @user
+    flash[:danger] = t "users.danger_permission"
   end
 
   def admin_user
-    unless current_user.admin?
-      redirect_to root_path
-      flash[:danger] = t "users.danger_permission"
-    end
+    return if current_user.admin?
+
+    redirect_to root_path
+    flash[:danger] = t "users.danger_permission"
   end
 end
