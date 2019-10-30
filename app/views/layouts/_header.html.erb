@@ -1,16 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class = "container">
     <%= link_to "sample app", root_path, id: "logo", class: "navbar-brand" %>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="float:right; margin:0px">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class = "nav-item"><%= link_to t(".home") , root_path, class: "nav-link" %></li>
-          <li class = "nav-item"><%= link_to t(".help"), help_path, class: "nav-link" %></li>
+          <li class = "nav-item"><%= link_to t(".home") , root_path, class: "nav-link text-white" %></li>
+          <li class = "nav-item"><%= link_to t(".help"), help_path, class: "nav-link text-white" %></li>
           <% if logged_in? %>
-            <li><%= link_to t(".users"), users_path, class: "nav-link" %></li>
+            <li><%= link_to t(".users"), users_path, class: "nav-link text-white" %></li>
             <li class="dropdown">
-              <%= link_to t(".link_dropdown_html"), "#", "data-toggle" => "dropdown" %>
-              <ul class="dropdown-menu">
+              <%= link_to t(".link_dropdown_html"), "javascript:drop_down();", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu" id = "dropdown-user" style="display:none">
                 <li><%= link_to t(".profile"), current_user %></li>
                 <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
                 <li class="divider"></li>
@@ -19,13 +19,14 @@
                 </li>
               </ul>
             </li>
+
           <% else %>
-            <li class = "nav-item"><%= link_to t(".login"), login_path, class: "nav-link" %></li>
+            <li class = "nav-item"><%= link_to t(".login"), login_path, class: "nav-link text-white" %></li>
           <% end %>
           <li class = "nav-item">
             <% locale = [{id: "vi", name: ".lang_vi"}, {id: "en", name: ".lang_en"}] %>
             <%= form_for :"", method: :get do |f| %>
-            <%= select_tag "locale", options_for_select(locale.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:locale]), onchange: "this.form.submit()" %>
+            <%= select_tag "locale", options_for_select(locale.collect{|u| [t(u[:name]), u[:id]]}, selected: params[:locale]), onchange: "this.form.submit()", class: "browser-default custom-select" %>
             <% end %>
           </li>
         </ul>
@@ -33,3 +34,14 @@
     </nav>
   </div>
 </header>
+
+<script>
+  function drop_down() {
+    display = document.getElementById("dropdown-user").style.display;
+    "none" == display ? set_display("table") : set_display();
+  }
+  function set_display(display = "none") {
+    dropdown_user = document.getElementById("dropdown-user");
+    dropdown_user.setAttribute("style", "display: " + display)
+  }
+</script>
