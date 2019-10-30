@@ -37,6 +37,57 @@ en:
     submit:
       user:
         create: "Create my account"
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            picture_size:
+              to_big: "should be less than 5MB"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years:
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        zero: "less than 1 minute"
+        one: "less than 1 minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds:
+        zero: "less than 1 second"
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_years:
+        one: "1 year"
+        other: "%{count} years"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_hour:
+        one: "1 hour"
+        other: "%{count} hours"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_second:
+        one: "1 second"
+        other: "%{count} seconds"
   layouts:
     rails_default:
       title: "Ruby on Rails Tutorial Sample App"
@@ -57,13 +108,48 @@ en:
       news: "News"
       about: "About"
       contact: "Contact"
+  users:
+    danger_permission: "User not permission"
+    danger_login: "Please login."
+    danger_user: "User not exists!"
+    new:
+      signup: "Sign up"
+      content: "This will be a signup page for new users."
+      signup2: "Sign up now!"
+      name: "Name"
+      pass: "Password"
+      confirm: "Confirmation"
+    create:
+      welcome: "Welcome to the Sample App!"
+    show:
+      micropost: "Micropost (%{count})"
+    edit:
+      title: "Edit user"
+      title2: "Update your profile"
+      btn: "Save changes"
+      change: "change"
+    update:
+      success: "Profile updated"
+    index:
+      title: "All users"
+      delete: "Delete"
+    destroy:
+      success: "User deleted"
+    user:
+      delete: "Delete"
+      confirm: "You sure?"
   static_pages:
     home:
       title: "Home"
       title2: "Sample App"
       content_html: "This is the home page for the
-  <a href='https://www.railstutorial.org/'>Ruby on Rails Tutorial</a>
-  sample application."
+  <a href='https://www.railstutorial.org/'>Ruby on Rails Tutorial</a>"
+      signup: "Sign up"
+      micropost: "Micropost Feed"
+      title_link: "View my profile"
+      micropost:
+        one: "%{count} micropost"
+        other: "%{count} microposts"
     about:
       title: "About"
       content_html: "The <a href='https://www.railstutorial.org/'><em>Ruby on Rails
@@ -81,40 +167,6 @@ en:
     contact:
       title: "Contact"
       content_html: "Contact the Ruby on Rails Tutorial about the sample app at the <a href='https://www.railstutorial.org/contact'>contact page</a>."
-  users:
-    danger_permission: "User not permission"
-    danger_login: "Please login."
-    danger_user: "User not exists!"
-    new:
-      signup: "Sign up"
-      content: "This will be a signup page for new users."
-      signup2: "Sign up now!"
-      name: "Name"
-      pass: "Password"
-      confirm: "Confirmation"
-    create:
-      welcome: "Welcome to the Sample App!"
-    show:
-    edit:
-      title: "Edit user"
-      title2: "Update your profile"
-      btn: "Save changes"
-      change: "change"
-    update:
-      success: "Profile updated"
-    index:
-      title: "All users"
-      delete: "Delete"
-    destroy:
-      success: "User deleted"
-    user:
-      delete: "Delete"
-      confirm: "You sure?"
-  shared:
-    error_messages:
-      count:
-        one: "The form contain %{count} error"
-        other: "The form contain %{count} errors"
   sessions:
     new:
       title: "Log in"
@@ -163,3 +215,25 @@ en:
     update:
       empty: "can't be empty"
       success: "Password has been reset"
+  shared:
+    micropost_post:
+      placeholder: "Compose new micropost..."
+      btn: "Post"
+      notify: "Maximum file size is 5MB. Please choose a smaller file."
+    user_info:
+      count:
+        one: "1 post"
+        other: "%{count} posts"
+  microposts:
+    create:
+      success: "Micropost created!"
+    micropost:
+      time_posted: "Posted %{time} ago."
+      delete: "delete"
+      question: "You sure?"
+    destroy:
+      success: "Micropost deleted"
+    error_messages:
+      count:
+        one: "The form contain %{count} error"
+        other: "The form contain %{count} errors"
