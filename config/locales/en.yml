@@ -30,6 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    label:
+      user:
+        password_confirmation: "Password confirmation"
+    submit:
+      user:
+        create: "Create my account"
   layouts:
     rails_default:
       title: "Ruby on Rails Tutorial Sample App"
@@ -39,6 +46,11 @@ en:
       home: "Home"
       help: "Help"
       login: "Log in"
+      link_dropdown_html: "Account <b class='caret'></b>"
+      user: "Users"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Log out"
     footer:
       content1_html: "The <a href='https://www.railstutorial.org/'> Ruby on Rails Tutorial </a>"
       content2_html: "by <a href='http://www.michaelhartl.com/'> Michael Hartl </a>"
@@ -77,7 +89,6 @@ en:
       name: "Name"
       pass: "Password"
       confirm: "Confirmation"
-      btn: "Create my account"
     create:
       welcome: "Welcome to the Sample App!"
     show:
@@ -87,3 +98,10 @@ en:
       count:
         one: "The form contain %{count} error"
         other: "The form contain %{count} errors"
+  sessions:
+    new:
+      title: "Log in"
+      new1: "New User?"
+      signup: "Sign up now!"
+    create:
+      danger: "Invalid email/password combination"
