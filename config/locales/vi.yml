@@ -5,15 +5,22 @@ vi:
         user:
           attributes:
             name:
-              blank: "Tên không được để trống"
-              too_long: "Tên không được vượt quá 50 kí tự"
+              blank: "không được để trống"
+              too_long: "không được vượt quá 50 kí tự"
             email:
-              blank: "Email không được trống"
-              too_long: "Email không được quá dài"
-              invalid: "Email không hợp lệ"
+              blank: "không được trống"
+              too_long: "không được quá dài"
+              invalid: "không hợp lệ"
+              taken: "is exists"
             password:
-              blank: "Mật khẩu không được để trống"
-              too_short: "Mật khẩu quá ngắn"
+              blank: "không được để trống"
+              too_short: "quá ngắn"
+        relationship:
+          attributes:
+            follower_id:
+              blank: "Người theo dõi không thể rỗng"
+            followed_id:
+              blank: "Người bị theo dõi không thể rỗng"
       messages:
         bad_name: "Tên không hợp lệ"
         bad_email: "Email không hợp lệ"
@@ -106,8 +113,8 @@ vi:
       title2: "Ứng dụng mẫu"
       content_html: 'Đây là trang chủ cho ứng dụng mẫu <a href="https://www.railstutorial.org/">hướng dẫn Ruby on Rails</a>.'
       signup: "Đăng ký"
-      title_link: "view my profile"
       micropost: "Bài đăng"
+      title_link: "Xem thông tin của tôi"
       count:
         one: "%{count} Bài đăng"
         other: "%{count} Bài đăng"
@@ -143,13 +150,30 @@ vi:
       change: "Thay đổi"
     update:
       success: "Cập nhật thành công!"
+      danger: "Cập nhật thất bại"
     index:
       title: "Tất cả người dùng"
     destroy:
       success: "Xóa người dùng thành công!"
+      danger: "Xóa thất bại"
     user:
       delete: "Xóa người dùng"
       confirm: "Bạn chắc chứ?"
+    how_follow:
+      link: "Xem thông tin của tôi"
+      micropost: "Bài đăng:"
+    follows:
+      followers:
+        title: "Người theo dõi"
+      following:
+        title: "Người đang theo dõi"
+    follow:
+      btn: "Theo dõi"
+    unfollow:
+      btn: "Bỏ theo dõi"
+    show_follow:
+      link: "Thông tin của tôi"
+      micropost_html: "<b> Bài đăng </b> %{count}"
   sessions:
     new:
       title: "Đăng nhập"
@@ -200,14 +224,24 @@ vi:
       empty: "Không thể rỗng"
       success: "Mật khẩu thiết lập lại thành công!"
   shared:
+    error_messages:
+      count:
+        one: "Form chứa %{count} lỗi"
+        other: "Form chứa %{count} lỗi"
     micropost_form:
       placeholder: "Soạn bài đăng mới..."
       btn: "Đăng bài"
       notify: "Kích cỡ tối đa của file là 5MB. Hãy chọn một file kích cỡ nhỏ hơn."
     user_info:
+      title_link: "Thông tin của tôi"
       count:
         one: "1 bài đăng"
         other: "%{count} bài đăng"
+    stats:
+      following_html: "<strong id='following' class='stat'>
+      %{size} </strong> Đang theo dõi"
+      followers_html: "<strong id='followers' class='stat'> %{size} </strong>
+      Người theo dõi"
   microposts:
     create:
       success: "Bài viết đã tạo thành công!"
@@ -221,3 +255,5 @@ vi:
       count:
         one: "Form chứa %{count} lỗi"
         other: "Form chứa %{count} lỗi"
+  relationships:
+    danger_user: "Người dùng không tồn tại."

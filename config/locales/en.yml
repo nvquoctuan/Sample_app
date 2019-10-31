@@ -1,4 +1,4 @@
-# Files in the config/locales directory are used for internationalization
+# Files in the config/locales direRelationshipsctory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
 #
@@ -10,7 +10,7 @@
 #
 #     <%= t("hello") %>
 #
-# To use a different locale, set it with `I18n.locale`:
+# To use a different locale, set it Relationshipswith `I18n.locale`:
 #
 #     I18n.locale = :es
 #
@@ -108,6 +108,35 @@ en:
       news: "News"
       about: "About"
       contact: "Contact"
+  static_pages:
+    home:
+      title: "Home"
+      title2: "Sample App"
+      content_html: "This is the home page for the
+        <a href='https://www.railstutorial.org/'>Ruby on Rails Tutorial</a>
+        sample application."
+      signup: "Sign up"
+      title_link: "View my profile"
+      micropost:
+        one: "%{count} micropost"
+        other: "%{count} microposts"
+    about:
+      title: "About"
+      content_html: "The <a href='https://www.railstutorial.org/'><em>Ruby on Rails
+  Tutorial</em></a> is a <a href='https://www.railstutorial.org/book'>book</a> and
+  <a href='http://screencasts.railstutorial.org/'>screencast series</a>
+  to teach web development with <a href='http://rubyonrails.org/'>Ruby on Rails</a>.
+  This is the sample application for the tutorial."
+    help:
+      title: "Help"
+      content_html: "Get help on the Ruby on Rails Tutorial at the
+  <a href='https://www.railstutorial.org/help'>Rails Tutorial help page</a>.
+  To get help on this sample app, see the
+  <a href='https://www.railstutorial.org/book'><em>Ruby on Rails Tutorial</em>
+  book</a>."
+    contact:
+      title: "Contact"
+      content_html: "Contact the Ruby on Rails Tutorial about the sample app at the <a href='https://www.railstutorial.org/contact'>contact page</a>."
   users:
     danger_permission: "User not permission"
     danger_login: "Please login."
@@ -130,14 +159,31 @@ en:
       change: "change"
     update:
       success: "Profile updated"
+      danger: "Update failure"
     index:
       title: "All users"
       delete: "Delete"
     destroy:
       success: "User deleted"
+      danger: "Delete failure"
     user:
       delete: "Delete"
       confirm: "You sure?"
+    follows:
+      followers:
+        title: "Followers"
+      following:
+        title: "Following"
+    show_follow:
+      link: "view my profile"
+      micropost: "Microposts:"
+    follow:
+      btn: "Follow"
+    unfollow:
+      btn: "Unfollow"
+    show_follow:
+      link: "Thông tin của tôi"
+      micropost: "<b> Bài đăng </b> %{count}"
   static_pages:
     home:
       title: "Home"
@@ -216,14 +262,24 @@ en:
       empty: "can't be empty"
       success: "Password has been reset"
   shared:
-    micropost_post:
+    error_messages:
+      count:
+        one: "The form contain %{count} error"
+        other: "The form contain %{count} errors"
+    micropost_form:
       placeholder: "Compose new micropost..."
       btn: "Post"
       notify: "Maximum file size is 5MB. Please choose a smaller file."
     user_info:
+      title_link: "My info"
       count:
         one: "1 post"
         other: "%{count} posts"
+    stats:
+      following_html: "<strong id='following' class='stat'>
+      %{size} </strong> Following"
+      followers_html: "<strong id='followers' class='stat'> %{size} </strong>
+      Followers"
   microposts:
     create:
       success: "Micropost created!"
@@ -237,3 +293,5 @@ en:
       count:
         one: "The form contain %{count} error"
         other: "The form contain %{count} errors"
+  relationships:
+    danger_user: "User not exists."
