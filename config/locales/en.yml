@@ -105,3 +105,4 @@ en:
       signup: "Sign up now!"
     create:
       danger: "Invalid email/password combination"
+      remember: "Remember me on this computer"

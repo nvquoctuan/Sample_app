@@ -69,3 +69,4 @@ vi:
       signup: "Đăng ký ngay!"
     create:
       danger: "Tài khoản mật khẩu không hợp lệ."
+      remember: "Ghi nhớ tài khoản."
