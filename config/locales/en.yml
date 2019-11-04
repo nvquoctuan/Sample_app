@@ -82,6 +82,9 @@ en:
       title: "Contact"
       content_html: 'Contact the Ruby on Rails Tutorial about the sample app at the <a href="https://www.railstutorial.org/contact">contact page</a>.'
   users:
+    danger_permission: "User not permission"
+    danger_login: "Please login."
+    danger_user: "User not exists!"
     new:
       signup: "Sign up"
       content: "This will be a signup page for new users."
@@ -92,7 +95,21 @@ en:
     create:
       welcome: "Welcome to the Sample App!"
     show:
-      danger: "User not exists!"
+    edit:
+      title: "Edit user"
+      title2: "Update your profile"
+      btn: "Save changes"
+      change: "change"
+    update:
+      success: "Profile updated"
+    index:
+      title: "All users"
+      delete: "Delete"
+    destroy:
+      success: "User deleted"
+    user:
+      delete: "Delete"
+      confirm: "You sure?"
   shared:
     error_messages:
       count:
@@ -103,6 +120,6 @@ en:
       title: "Log in"
       new1: "New User?"
       signup: "Sign up now!"
+      remember: "Remember me on this computer"
     create:
       danger: "Invalid email/password combination"
-      remember: "Remember me on this computer"

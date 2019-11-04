@@ -1,12 +1,15 @@
 class User < ApplicationRecord
+
   attr_accessor :remember_token
   before_save{email.downcase!}
-  validates :name,  presence: true, length: {maximum: Settings.size.max_name}
+  validates :name,  presence: true, length: {maximum: Settings.size.s_50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: {maximum: Settings.size.max_email},
+  validates :email, presence: true, length: {maximum: Settings.size.s_255},
           format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.size.min_pass}
+  validates :password, presence: true, length: {minimum: Settings.size.s_6},
+                      allow_nil: true
+  enum role: {admin: 0, manager: 1, user: 2}
 
   # Returns the hash digest of the given string.
   class << self
@@ -22,7 +25,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = User.new_token
-    update remember_digest: User.digest(remember_token)
+    update_attribute(:remember_digest, User.digest(remember_token))
   end
 
   def authenticated? remember_token
@@ -32,6 +35,6 @@ class User < ApplicationRecord
   end
 
   def forget
-    update remember_digest: nil
+    update_attribute :remember_digest, nil
   end
 end
