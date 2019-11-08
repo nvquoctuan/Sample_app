@@ -123,3 +123,17 @@ en:
       remember: "Remember me on this computer"
     create:
       danger: "Invalid email/password combination"
+  user_mailer:
+    activation: "Accout activation"
+    account_activation:
+      title: "Sample App"
+      content: "Welcome to the Sample App! Click on the link below to activate your account:"
+      active: "Activate"
+      hello: "Hi %{name}"
+  account_activations:
+    edit:
+      success: "Account activated!"
+      danger: "Invalid activation link"
+  will_paginate:
+    previous_label: "Previous page"
+    next_label: "next page"

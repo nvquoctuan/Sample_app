@@ -5,10 +5,14 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.actived.paginate page: params[:page]
   end
 
-  def show; end
+  def show
+    redirect_to root_path && return unless @user.activated?
+  end
+
+  def edit; end
 
   def new
     @user = User.new
@@ -17,15 +21,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
+      @user.send_activation_email
       flash[:success] = t ".welcome"
       redirect_to @user
     else
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @user.update_attributes user_params
@@ -65,12 +67,16 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_to @user unless current_user? @user
-    flash[:danger] = t "users.danger_permission"
+    unless current_user? @user
+      redirect_to @user
+      flash[:danger] = t "users.danger_permission"
+    end
   end
 
   def admin_user
-    redirect_to root_path unless @user.admin?
-    flash[:danger] = t "users.permission"
+    unless current_user.admin?
+      redirect_to root_path
+      flash[:danger] = t "users.danger_permission"
+    end
   end
 end

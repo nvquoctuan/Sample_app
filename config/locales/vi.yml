@@ -1,12 +1,29 @@
 vi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+              to_long: "Tên không được vượt quá 50 kí tự"
+            email:
+              blank: "Email không được trống"
+              to_long: "Email không được quá dài"
+              invalid: "Email không hợp lệ"
+            password:
+              blank: "Mật khẩu không được để trống"
+              to_short: "Mật khẩu quá ngắn"
+      messages:
+        bad_name: "Tên không hợp lệ"
+        bad_email: "Email không hợp lệ"
+        bad_password: "Pass không hợp lệ"
   helpers:
     label:
       user:
         name: "Tên người dùng"
         password: "Mật khẩu"
         password_confirmation: "Xác thật mật khẩu"
-      session:
-        password: "Mật khẩu"
     submit:
       user:
         create: "Tạo tài khoản"
@@ -20,7 +37,7 @@ vi:
       help: "Giúp đỡ"
       login: "Đăng nhập"
       link_dropdown_html: "Tài khoản <b class='caret'></b>"
-      user: "Người dùng"
+      users: "Tất cả người dùng"
       profile: "Thông tin"
       setting: "Thiết lập"
       logout: "Đăng xuất"
@@ -86,3 +103,18 @@ vi:
       remember: "Ghi nhớ tài khoản."
     create:
       danger: "Tài khoản mật khẩu không hợp lệ."
+  user_mailer:
+    activation: "Kích hoạt tài khoản"
+    account_activation:
+      title: "Ứng dụng mẫu"
+      content: "Chào mừng đến với ứng dụng! click vào đường link bên dưới để kích hoạt
+      tài khoản của bạn:"
+      active: "Kích hoạt"
+      hello: "Chào %{name}"
+  account_activations:
+    edit:
+      success: "Kích hoạt thành công!"
+      danger: "Link kích hoạt không hợp lệ!"
+  will_paginate:
+    previous_label: "Trang trước"
+    next_label: "Trang sau"
