@@ -1,17 +1,18 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   validates :name,  presence: true, length: {maximum: Settings.size.s_50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.size.s_255},
           format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.size.s_6},
                       allow_nil: true
+  validates :password, presence: true, length: {minimum: Settings.size.s_6},
+                      on: :reset_pass
   before_save :downcase_email
   before_create :create_activation_digest
   enum role: {admin: 0, manager: 1, user: 2}
   has_secure_password
 
-  # Scopes
   scope :actived, ->{where activated: true}
 
   # Returns the hash digest of the given string.
@@ -34,6 +35,7 @@ class User < ApplicationRecord
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
     return false if digest.nil?
+
     BCrypt::Password.new(digest).is_password?(token)
   end
 
@@ -48,6 +50,20 @@ class User < ApplicationRecord
   # Sends activation email.
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attributes reset_digest: User.digest(reset_token),
+               reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 
   private

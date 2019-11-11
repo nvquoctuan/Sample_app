@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "hello"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("hello") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -24,7 +24,7 @@
 # Instead, surround them with single quotes.
 #
 # en:
-#   'true': 'foo'
+#   "true": "foo"
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
@@ -61,26 +61,26 @@ en:
     home:
       title: "Home"
       title2: "Sample App"
-      content_html: 'This is the home page for the
-  <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.'
+      content_html: "This is the home page for the
+  <a href='https://www.railstutorial.org/'>Ruby on Rails Tutorial</a>
+  sample application."
     about:
       title: "About"
-      content_html: 'The <a href="https://www.railstutorial.org/"><em>Ruby on Rails
-  Tutorial</em></a> is a <a href="https://www.railstutorial.org/book">book</a> and
-  <a href="http://screencasts.railstutorial.org/">screencast series</a>
-  to teach web development with <a href="http://rubyonrails.org/">Ruby on Rails</a>.
-  This is the sample application for the tutorial.'
+      content_html: "The <a href='https://www.railstutorial.org/'><em>Ruby on Rails
+  Tutorial</em></a> is a <a href='https://www.railstutorial.org/book'>book</a> and
+  <a href='http://screencasts.railstutorial.org/'>screencast series</a>
+  to teach web development with <a href='http://rubyonrails.org/'>Ruby on Rails</a>.
+  This is the sample application for the tutorial."
     help:
       title: "Help"
-      content_html: 'Get help on the Ruby on Rails Tutorial at the
-  <a href="https://www.railstutorial.org/help">Rails Tutorial help page</a>.
+      content_html: "Get help on the Ruby on Rails Tutorial at the
+  <a href='https://www.railstutorial.org/help'>Rails Tutorial help page</a>.
   To get help on this sample app, see the
-  <a href="https://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
-  book</a>.'
+  <a href='https://www.railstutorial.org/book'><em>Ruby on Rails Tutorial</em>
+  book</a>."
     contact:
       title: "Contact"
-      content_html: 'Contact the Ruby on Rails Tutorial about the sample app at the <a href="https://www.railstutorial.org/contact">contact page</a>.'
+      content_html: "Contact the Ruby on Rails Tutorial about the sample app at the <a href='https://www.railstutorial.org/contact'>contact page</a>."
   users:
     danger_permission: "User not permission"
     danger_login: "Please login."
@@ -120,6 +120,7 @@ en:
       title: "Log in"
       new1: "New User?"
       signup: "Sign up now!"
+      forget: "Forgot password"
       remember: "Remember me on this computer"
     create:
       danger: "Invalid email/password combination"
@@ -130,10 +131,35 @@ en:
       content: "Welcome to the Sample App! Click on the link below to activate your account:"
       active: "Activate"
       hello: "Hi %{name}"
+    password_reset:
+      title: "Password reset"
+      info: "To reset your password click the link below:"
+      content_html: "<p>This link will expire in two hours.</p>
+                    <p>if you did not request your password to be reset,
+      please ignore this email and your password will stay is it is. </p>"
+      content: "This link will expire in two hours.
+                if you did not request your password to be reset,
+      please ignore this email and your password will stay is it is."
   account_activations:
     edit:
       success: "Account activated!"
       danger: "Invalid activation link"
+      warning: "Account not activated. Check your email for the activation link."
   will_paginate:
     previous_label: "Previous page"
     next_label: "next page"
+  password_resets:
+    danger_email: "Email not exists"
+    danger_expired: "Password reset has expired."
+    edit:
+      title: "Reset password"
+      btn: "Update password"
+    new:
+      title: "Forgot password"
+      btn: "Submit"
+    create:
+      info: "Email sent with password reset instructions"
+      danger: "Email address not found"
+    update:
+      empty: "can't be empty"
+      success: "Password has been reset"
