@@ -5,11 +5,14 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.actived.paginate page: params[:page]
+    @users = User.actived.paginate page: params[:page],
+                  per_page: Settings.size.s_10
   end
 
   def show
     redirect_to root_path && return unless @user.activated?
+    @microposts = @user.microposts.paginate page: params[:page],
+                        per_page: Settings.size.s_10
   end
 
   def edit; end
@@ -46,7 +49,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :email, :name, :password, :password_confirmation
+    params.require(:user).permit User::USER_TYPE
   end
 
   def load_user

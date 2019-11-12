@@ -1,5 +1,10 @@
 size:
-  s_50: 50
-  s_255: 255
+  s_5: 5
   s_6: 6
+  s_10: 10
+  s_50: 50
   s_80: 80
+  s_140: 140
+  s_255: 255
+config:
+  image: "image/jpeg,image/gif,image/png"

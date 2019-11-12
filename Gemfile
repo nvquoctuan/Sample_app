@@ -6,17 +6,18 @@ ruby "2.6.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "bcrypt", "~> 3.1.12"
 gem "bootstrap-will_paginate", "~> 1.0.0"
+gem "carrierwave", "~> 1.2.2"
 gem "coffee-rails", "4.2.2"
 gem "config"
-# Create fake data
 gem "faker", "~> 1.7.3"
 gem "figaro"
-gem "rails", "~> 6.0.0"
-gem "will_paginate", "~> 3.1.6"
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails", "4.3.1"
-gem "uglifier",     "3.2.0"
+gem "mini_magick", "~> 4.7.0"
+gem "pry"
+gem "rails", "~> 6.0.0"
+gem "uglifier", "3.2.0"
+gem "will_paginate", "~> 3.1.6"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 # Use SCSS for stylesheets
@@ -24,15 +25,8 @@ gem "sass-rails", "~> 5"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 4.0"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem "turbolinks", "~> 5"
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
-# Use Active Model has_secure_password
-# gem "bcrypt", "~> 3.1.7"
-
-# Use Active Storage variant
-# gem "image_processing", "~> 1.2"
 gem "bootstrap-sass", "3.3.7"
+gem "turbolinks", "~> 5"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
@@ -73,6 +67,7 @@ group :test do
 end
 
 group :production do
+  gem "fog", "1.42"
   gem "pg", "0.20.0"
 end
 

@@ -27,6 +27,59 @@ vi:
     submit:
       user:
         create: "Tạo tài khoản"
+        micropost:
+          attributes:
+            user_id:
+              blank: "Người dùng không thể để trống"
+            content:
+              blank: "Nội dung không được để trống"
+              to_long: "Nội dung quá dài"
+            picture_size:
+              to_big: "Ảnh nên nhỏ hơn 5MB"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "1 giờ"
+        other: "%{count} giờ"
+      about_x_months:
+        one: "%{count} tháng"
+        other: "%{count} tháng"
+      about_x_years:
+        one: "1 năm"
+        other: "%{count} năm"
+      almost_x_years:
+        one: "gần 1 năm"
+        other: "gần %{count} năm"
+      half_a_minute: "30 giây"
+      less_than_x_minutes:
+        zero: "ít hơn 1 phút"
+        one: "ít hơn 1 phút"
+        other: "ít hơn %{count} phút"
+      less_than_x_seconds:
+        zero: "ít hơn 1 giây"
+        one: "ít hơn 1 giây"
+        other: "ít hơn %{count} giây"
+      over_x_years:
+        one: "trên 1 năm"
+        other: "trên %{count} năm"
+      x_years:
+        one: "1 năm"
+        other: "%{count} năm"
+      x_months:
+        one: "1 tháng"
+        other: "%{count} tháng"
+      x_days:
+        one: "1 ngày"
+        other: "%{count} ngày"
+      x_hour:
+        one: "1 giờ"
+        other: "%{count} giờ"
+      x_minutes:
+        one: "1 phút"
+        other: "%{count} phút"
+      x_second:
+        one: "1 giây"
+        other: "%{count} giây"
   layouts:
     rails_default:
       title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
@@ -52,6 +105,12 @@ vi:
       title: "Trang chủ"
       title2: "Ứng dụng mẫu"
       content_html: 'Đây là trang chủ cho ứng dụng mẫu <a href="https://www.railstutorial.org/">hướng dẫn Ruby on Rails</a>.'
+      signup: "Đăng ký"
+      title_link: "view my profile"
+      micropost: "Bài đăng"
+      count:
+        one: "%{count} Bài đăng"
+        other: "%{count} Bài đăng"
     about:
       title: "Giới thiệu"
       content_html: '<a href="https://www.railstutorial.org/"><em>Hướng dẫn Ruby on Rails</em></a> là một <a href="https://www.railstutorial.org/book">quyển sách</a> và <a href="http://screencasts.railstutorial.org/">loạt các hình ảnh</a> dạy về phát triển web với <a href="http://rubyonrails.org/"> Ruby on Rails</a>. Đây là ứng dụng mẫu cho hướng hướng dẫn.'
@@ -72,10 +131,11 @@ vi:
       name: "Tên người dùng"
       pass: "Mật khẩu"
       confirm: "Xác nhận mật khẩu"
+      btn: "Tạo tài khoản của tôi"
     create:
       welcome: "Chào mừng bạn đến ứng dụng mẫu!"
     show:
-      danger: "Tài khoản không tồn tại!"
+      micropost: "Bài đăng (%{count})"
     edit:
       title: "Đăng ký người dùng."
       title2: "Cập nhật thông tin của bạn"
@@ -90,11 +150,6 @@ vi:
     user:
       delete: "Xóa người dùng"
       confirm: "Bạn chắc chứ?"
-  shared:
-    error_messages:
-      count:
-        one: "Form chứa %{count} lỗi"
-        other: "Form chứa %{count} lỗi"
   sessions:
     new:
       title: "Đăng nhập"
@@ -144,3 +199,25 @@ vi:
     update:
       empty: "Không thể rỗng"
       success: "Mật khẩu thiết lập lại thành công!"
+  shared:
+    micropost_form:
+      placeholder: "Soạn bài đăng mới..."
+      btn: "Đăng bài"
+      notify: "Kích cỡ tối đa của file là 5MB. Hãy chọn một file kích cỡ nhỏ hơn."
+    user_info:
+      count:
+        one: "1 bài đăng"
+        other: "%{count} bài đăng"
+  microposts:
+    create:
+      success: "Bài viết đã tạo thành công!"
+    micropost:
+      time_posted: "Bài viết đăng %{time} trước."
+      delete: "Xóa"
+      question: "Bạn chắc chứ?"
+    destroy:
+      success: "Bài đăng xóa thành công!"
+    error_messages:
+      count:
+        one: "Form chứa %{count} lỗi"
+        other: "Form chứa %{count} lỗi"

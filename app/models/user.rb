@@ -1,7 +1,13 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token, :reset_token
-  validates :name,  presence: true, length: {maximum: Settings.size.s_50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  PASSWORD_RESET = %i(password password_confirmation)
+  USER_TYPE = %i(email name password password_confirmation)
+
+  attr_accessor :remember_token, :activation_token, :reset_token
+
+  has_many :microposts, dependent: :destroy
+
+  validates :name,  presence: true, length: {maximum: Settings.size.s_50}
   validates :email, presence: true, length: {maximum: Settings.size.s_255},
           format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.size.s_6},
