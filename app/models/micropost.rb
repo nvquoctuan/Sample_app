@@ -1,5 +1,5 @@
 class Micropost < ApplicationRecord
-  MICROPOST_TYPE = %i(content picture)
+  MICROPOST_TYPE = %i(content picture).freeze
   belongs_to :user
 
   validates :user_id, presence: true
@@ -7,12 +7,19 @@ class Micropost < ApplicationRecord
   validate :picture_size
 
   scope :recent_posts, ->{order created_at: :desc}
-  scope :feed, ->(id){where(user_id: id)}
+  scope :feed, ->(user){where("user_id IN (?) OR user_id = ?",
+                        user.followers.ids, user.id)}
 
-  mount_uploader :picture, PictureUploader
+  has_one_attached :picture
+  delegate :name, to: :user, prefix: true
 
   private
+
   def picture_size
-    errors.add(:picture, t(".to_big")) if picture.size > Settings.size.s_5.megabytes
+    return unless picture.attached?
+    return unless picture.blob.byte_size > Settings.size.s_5.megabytes
+
+    errors.add(:picture, t(".to_big"))
+    picture.purge
   end
 end
